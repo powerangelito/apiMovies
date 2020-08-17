@@ -8,6 +8,6 @@ use Faker\Generator as Faker;
 $factory->define(Movie::class, function (Faker $faker) {
     return [
         'nombre'                => $faker->sentence,
-        'fecha_publicacion'     => $faker->dateTimeThisCentury()
+        'fecha_publicacion'     => $faker->date('d/m/Y')
     ];
 });

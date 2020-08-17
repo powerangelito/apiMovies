@@ -18,5 +18,6 @@ class DatabaseSeeder extends Seeder
         ]);
 
         factory(App\Movie::class, 10)->create();
+        factory(App\Inning::class, 10)->create();
     }
 }
