@@ -18,6 +18,7 @@ class CreateMoviesTable extends Migration
             $table->string('nombre');
             $table->string('fecha_publicacion');
             $table->string('image')->nullable();
+            $table->tinyInteger('estado');
             $table->timestamps();
         });
     }

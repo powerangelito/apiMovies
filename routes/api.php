@@ -17,3 +17,19 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('movies', 'MovieController@getAll');
+Route::post('movies', 'MovieController@add');
+Route::get('movies/{id}', 'MovieController@get');
+Route::post('movies/{id}', 'MovieController@edit');
+Route::get('movies/delete/{id}', 'MovieController@delete');
+
+Route::get('innings', 'InningController@getAll');
+Route::post('innings', 'InningController@add');
+Route::get('innings/{id}', 'InningController@get');
+Route::post('innings/{id}', 'InningController@edit');
+Route::get('innings/delete/{id}', 'InningController@delete');
+
+Route::get('assigns', 'MovieInnginsController@getAll');
+Route::post('assigns/movie/{movie}/innign/{innign}', 'MovieInnginsController@assign');
+

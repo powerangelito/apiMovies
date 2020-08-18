@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateInningsTable extends Migration
+class CreateMovieInningsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,14 @@ class CreateInningsTable extends Migration
      */
     public function up()
     {
-        Schema::create('innings', function (Blueprint $table) {
+        Schema::create('movie_innings', function (Blueprint $table) {
             $table->id();
-            $table->time('turno');
-            $table->tinyInteger('estado');
+            $table->bigInteger('id_pelicula')->unsigned();
+            $table->bigInteger('id_turno')->unsigned();
             $table->timestamps();
+
+            $table->foreign('id_pelicula')->references('id')->on('movies');
+            $table->foreign('id_turno')->references('id')->on('innings');
         });
     }
 
@@ -28,6 +31,6 @@ class CreateInningsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('innings');
+        Schema::dropIfExists('movie_innings');
     }
 }

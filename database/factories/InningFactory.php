@@ -7,7 +7,7 @@ use Faker\Generator as Faker;
 
 $factory->define(Inning::class, function (Faker $faker) {
     return [
-        'Turno'      => $faker->time('H:i'),
-        'Estado'     => $faker->numberBetween(0,1)
+        'turno'      => $faker->time('H:i'),
+        'estado'     => $faker->numberBetween(0,1)
     ];
 });
